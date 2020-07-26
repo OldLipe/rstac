@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>R Client Library for SpatioTemporal Asset Catalog • rstac</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -51,6 +51,9 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="articles/index.html">Articles</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -87,36 +90,36 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">magrittr</span>)
 
 <span class="co"># Create a stac object and return a STAC Catalog</span>
-<span class="no">stac_catalog</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/stac.html">stac</a></span>(<span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>) <span class="kw">%&gt;%</span>
+<span class="no">stac_catalog</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/stac.html">stac</a></span>(<span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>) <span class="kw">%&gt;%</span>
                 <span class="fu">stac_request</span>()
 
 
 <span class="co"># Create a stac_items object and return STAC items</span>
-<span class="no">items</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/stac_search.html">stac_search</a></span>(<span class="kw">url</span> <span class="kw">=</span> <span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>,
+<span class="no">items</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/stac_search.html">stac_search</a></span>(<span class="kw">url</span> <span class="kw">=</span> <span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>,
                     <span class="kw">collections</span> <span class="kw">=</span> <span class="st">"MOD13Q1"</span>,
                     <span class="kw">bbox</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">55.16335</span>, -<span class="fl">4.26325</span>, -<span class="fl">49.31739</span>, -<span class="fl">1.18355</span>)) <span class="kw">%&gt;%</span>
         <span class="fu">stac_request</span>()
 
 <span class="co"># Create a stac object and returns a list of STAC Collections</span>
-<span class="no">col</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/stac_collections.html">stac_collections</a></span>(<span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>) <span class="kw">%&gt;%</span>
+<span class="no">col</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/stac_collections.html">stac_collections</a></span>(<span class="st">"http://brazildatacube.dpi.inpe.br/bdc-stac/0.8.0"</span>) <span class="kw">%&gt;%</span>
        <span class="fu">stac_request</span>()</pre></div>
 <div id="items-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#items-functions" class="anchor"></a>Items functions</h3>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="co"># Pagination of items in the `stac_items` object</span>
-<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/items_fetch.html">items_fetch</a></span>()
+<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/items_fetch.html">items_fetch</a></span>()
 
 <span class="co"># Count how many items matched the search criteria</span>
-<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/items_matched.html">items_matched</a></span>()
+<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/items_matched.html">items_matched</a></span>()
 
 <span class="co"># Count how many items are in the `stac_items` object</span>
-<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/items_length.html">items_length</a></span>()</pre></div>
+<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/items_length.html">items_length</a></span>()</pre></div>
 </div>
 <div id="download-assets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#download-assets" class="anchor"></a>Download assets</h3>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="co"># Downloads the assets provided by the STAC API</span>
-<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="reference/assets_download.html">assets_download</a></span>(<span class="kw">assets_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue"</span>, <span class="st">"ndvi"</span>), <span class="kw">output_dir</span> <span class="kw">=</span> <span class="st">"./"</span>)</pre></div>
+<span class="no">items</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/rstac/man/assets_download.html">assets_download</a></span>(<span class="kw">assets_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue"</span>, <span class="st">"ndvi"</span>), <span class="kw">output_dir</span> <span class="kw">=</span> <span class="st">"./"</span>)</pre></div>
 </div>
 </div>
 </div>
