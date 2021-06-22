@@ -17,7 +17,7 @@
 #' @return a \code{character} with the href signed by the token.
 #'
 #' @export
-sign_bdc <- function(url, env = NULL, ...) {
+sign_bdc <- function(url, env, ...) {
 
   parsed_href <- httr::parse_url(url)
 

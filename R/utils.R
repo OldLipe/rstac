@@ -730,7 +730,7 @@ items_sign <- function(items, sign_fn = NULL) {
   items[["features"]] <- lapply(items[["features"]], function(item){
 
     item[["assets"]] <- lapply(item[["assets"]], function(asset){
-      asset[["href"]] <-  sign_fn(asset[["href"]], env)
+      asset[["href"]] <-  sign_fn(asset[["href"]], env = env)
       asset
     })
 
