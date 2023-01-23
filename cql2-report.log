@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.12.9)  23 JAN 2023 18:52
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.12.9)  23 JAN 2023 19:39
  restricted system commands enabled.
 **cql2-report.tex
 (./cql2-report.tex
@@ -1648,50 +1648,50 @@ LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/b/n' will be
 (Font)              scaled to size 14.4pt on input line 215.
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 262.
+(Font)              scaled to size 12.0pt on input line 258.
 [1
 
 {/home/sits/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 295.
+(Font)              scaled to size 9.0pt on input line 303.
 [2] [3]
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 445.
+(Font)              scaled to size 10.0pt on input line 424.
 [4]
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 555.
-[5] [6]
-Underfull \hbox (badness 2221) in paragraph at lines 648--662
+(Font)              scaled to size 9.0pt on input line 534.
+[5]
+Underfull \hbox (badness 2221) in paragraph at lines 627--641
 []\TU/IBMPlexSerif(0)/m/n/10 The sup-ported tem-po-ral op-er-a-tors are: [][][][], [][][][], [][][][], [][][][],
  []
 
 
-Overfull \hbox (11.89665pt too wide) in paragraph at lines 648--662
+Overfull \hbox (11.89665pt too wide) in paragraph at lines 627--641
 [][][][]\TU/IBMPlexSerif(0)/m/n/10 , [][][][], [][][][], [][][][], [][][][], [][][][], [][][][], []
  []
 
-[7]
+[6]
 LaTeX Font Info:    Font shape `TU/IBMPlexSerif(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 724.
-[8] (./cql2-report.aux)
+(Font)              scaled to size 10.0pt on input line 703.
+[7] [8] (./cql2-report.aux)
 Package rerunfilecheck Info: File `cql2-report.out' has not changed.
-(rerunfilecheck)             Checksum: 88A466AD401B3218BE14F76242DC01A8;4384.
+(rerunfilecheck)             Checksum: 88A624F600FE9CD020464C8193587264;4404.
 )
 
 Here is how much of LuaTeX's memory you used:
- 23210 strings out of 477247
- 477821,1144653 words of node,token memory allocated
- 672 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 3 glyph, 13 attribute, 67 glue_spec, 13 attribute_list, 1 write, 1 user_defined, 5 pdf_action nodes
-   avail lists: 1:4,2:6165,3:301,4:9286,5:10789,6:95,7:9940,8:81,9:22118,10:32,11:1088
- 43473 multiletter control sequences out of 65536+600000
- 174 fonts using 33863511 bytes
- 86i,6n,115p,1007b,954s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 23207 strings out of 477247
+ 477840,1144653 words of node,token memory allocated
+ 692 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 3 glyph, 15 attribute, 67 glue_spec, 15 attribute_list, 1 write, 1 user_defined, 7 pdf_action nodes
+   avail lists: 1:2,2:6325,3:304,4:8898,5:10739,6:98,7:10289,8:76,9:21635,10:32,11:1136
+ 43470 multiletter control sequences out of 65536+600000
+ 174 fonts using 33863739 bytes
+ 86i,6n,115p,1007b,956s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/sits/.TinyTeX/texmf-dist/fonts/opentype/ibm/plex/IBMPlexSerif-TextItalic.otf></home/sits/.TinyTeX/texmf-dist/fonts/opentype/ibm/plex/IBMPlexMono-SemiBold.otf></home/sits/.TinyTeX/texmf-dist/fonts/opentype/ibm/plex/IBMPlexMono-Text.otf></home/sits/.TinyTeX/texmf-dist/fonts/opentype/ibm/plex/IBMPlexSerif-SemiBold.otf></home/sits/.TinyTeX/texmf-dist/fonts/opentype/ibm/plex/IBMPlexSerif-Text.otf>
-Output written on cql2-report.pdf (8 pages, 61956 bytes).
+Output written on cql2-report.pdf (8 pages, 61020 bytes).
 
-PDF statistics: 330 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
+PDF statistics: 332 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
  169 named destinations out of 1000 (max. 131072)
  145 words of extra memory for PDF output out of 10000 (max. 100000000)
 

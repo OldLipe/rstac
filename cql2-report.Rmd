@@ -40,43 +40,41 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Earth observation images is one of the most reliable and consistent way to monitor Earth surface. In the last decades, the number of orbital instruments for Earth observation has increased [@finer_combating_2018]. Cloud computing has been adopted by industry and academy to store, access, process, and distribute big Earth observation data [@wagemann_user_2021]. In this context, Spatio-temporal Assets Catalog (STAC) [https://stacspec.org] is becoming a standard to describe and search in satellite imagery service providers. 
+Earth observation images provide a reliable and consistent way to monitor Earth's surface. In the last decades, the number of orbital instruments for Earth observation has increased [@finer_combating_2018]. Cloud computing has been adopted by industry and academy to store, access, process, and distribute big Earth observation data [@wagemann_user_2021]. In this context, the Spatio-temporal Assets Catalog (STAC) [https://stacspec.org] protocol has become a standard to describe and search EO data cloud service providers. 
 
-STAC is an OGC API Features (OAFeat) [@ogc_ogc_2019] compliant standard. STAC enables users to search and access satellite images using a client. One of main characteristics of STAC is its core simplicity that supports basic search functionality. The standard also enables the development of new extensions to support more specific and complex functionality, as for example, Common Query Language 2 (CQL2) extension [@ogc_common_2022].
+The STAC protocol complies with the OGC API Features standard (OAFeat) [@ogc_ogc_2019]. STAC enables users to search and access satellite images. The STAC specification allows the development of new extensions to support more specific and complex functionality, including the Common Query Language 2 (CQL2) extension [@ogc_common_2022]. CQL2 is part of OAFeat standard; it provides a complex way to search and retrieve spatial-temporal assets. CQL2 is a powerful query language that enables users to create complex filtering criteria in a expressive way. Using CQL2 in a STAC service, users can search for spatial assets using a variety of metadata information such as cloud cover and spatial relations. 
 
-CQL2 is part of OAFeat standard that provides a complex way to search and retrieve spatial-temporal assets. Using CQL2 in a STAC service, users can search for spatial assets using a variety of metadata information such as cloud cover and spatial relations. CQL2 is a powerful query language that enables users to create complex filtering criteria in a expressive way.
+This report describes the development of an updated version of the rstac R package [@simoes_rstac_2021] that provides full support for the CQL2 specification as part of queries that use the STAC protocol. The rstac package can be accessed at https://github.com/brazil-data-cube/rstac and is also available on the Comprehensive Archive Network (CRAN).
 
-In R language, rstac package is so far the unique client to support STAC services [@simoes_rstac_2021]. rstac provides a basic functionality to STAC core. This report shows the final status on CQL2 extension development in rstac. It also describes the activities realized in the course of the project and how CQL2 works in rstac package. Current version of the rstac package can be accessed at https://github.com/brazil-data-cube/rstac.
+# Project milestones
 
-# Project status
-
-This section reports the final project status on the development of CQL2 capability in rstac package. We describe each project's milestones in following topics.
+This section describes the implementation of the authors proposal that was approved by the Radiant Earth Foundation and STAC Project Steering Committee for the advance of STAC ecosystem programme.
 
 ## Milestone 1 - Proof of concept version with examples that validate the idea of using the package
 
-Status: concluded. 
+Status: concluded in July 2022. 
 
 We used the abstract syntax tree (AST) of R language to develop the CQL2 extension in rstac. In computer science, AST is a way to represent an language expression in a formal way using data structures. AST representation informs the precedence on which and how a identifier will be evaluated. AST can be used to translate code from a language to other [@wickham_hadley_advanced_2019]. The advantage of this approach is that users can focus on filtering criteria putting less effort in checking the syntax consistency. Using R environments and lexical scoping, AST gave us a powerful way for translating R code into CQL2 query. This approach showed to be consistent with CQL2 standard. We provide some examples of code translation in appendix A.
 
 
 ## Milestone 2 - Implementing integration testing with STAC services supporting CQL2
 
-Status: concluded. 
+Status: concluded in September 2022. 
 
-One of main tasks we dedicated effort in this project was implement integration tests. CQL2 standard provides a broad conformance tests [cite]. We have implemented most of tests targeting test dataset. The test dataset used in rstac conformance tests is provided by "Test Dataset for the CQL2 Test Suite" [https://cql2test.ldproxy.net/ne110m4cql2]. It is derived from Natural Earth [https://www.naturalearthdata.com], a public domain dataset containing features from three layers of the original data at scale 1:110 million: `ne_110m_admin_0_countries`, `ne_110m_populated_places_simple`, and `ne_110m_rivers_lake_centerlines`. Besides this test suite, we also have implemented tests using Microsoft Planetary Computer STAC service [https://planetarycomputer.microsoft.com/api/stac/v1]. These tests were critical to detect bugs and inconsistencies along with software development. Current rstac version is passing in all of them, which asserts rstac robust compliance to CQL2 standard. The list of conformance tests implemented in rstac is listed in appendix B.
+The CQL2 standard includes a set of conformance tests [@ogc_ogc_2019]. We have validated our implementation using all conformance tests that provide a test dataset. The test dataset used in rstac conformance tests is provided by "Test Dataset for the CQL2 Test Suite" [https://cql2test.ldproxy.net/ne110m4cql2], derived from Natural Earth [https://www.naturalearthdata.com]. Besides this test suite, we also have implemented tests using Microsoft Planetary Computer STAC service [https://planetarycomputer.microsoft.com/api/stac/v1]. The list of conformance tests implemented in rstac is listed in appendix B.
 
 
 ## Milestone 3 - Pre-release version with documentation and testing
 
-Status: concluded. 
+Status: concluded in November 2022. 
 
 We pushed a pre-released version of rstac into its Github repository. This version passed in all conformance tests referenced in previous topic. CQL2 filtering functionality is implemented in `ext_filter()` function. We have write a function documentation available in `?ext_filter()` in R console. Besides function description and parameters details, the documentation provides examples on how to use CQL2 filtering function using rstac package in actual STAC services.
 
 ## Milestone 4 - CRAN submission and tutorial creation for users and developers.
 
-Status: concluded.
+Status: concluded in January 2023.
 
-We have submitted `rstac` 0.9.2 version to Comprehensive R Archive Network (CRAN), now R users can install the package directly from CRAN. An important step to promote new `rstac` users is a well-documented package and tutorials. In this `rstac` version, we have updated the package documentation and write two new tutorials. Firtly, we have prepared a new R notebook on how to create CQL2 expression using `rstac`. Secondly, created a tutorial on accessing Planetary Computer STAC API using `rstac` and CQL2. We plan to submit it to Microsoft Planetary Computer Examples repository [https://github.com/microsoft/PlanetaryComputerExamples] as soon as possible.
+We have submitted `rstac` 0.9.2 version to CRAN; R users can now install the package directly from CRAN. Package documentation has been updated with two new tutorials. The first tutorial shows how to create CQL2 expressions with `rstac`. There is also a tutorial on how to access Planetary Computer data using `rstac` and CQL2. We will submit this tutorial to Planetary Computer repository [https://github.com/microsoft/PlanetaryComputerExamples].
 
 
 # Concluding remarks
@@ -133,8 +131,6 @@ cql2_json(vehicle_height > (bridge_clearance - 1)) # JSON format
 ```
 
 In both cases, the same CQL2 object representation is built from the expression using AST of R expression evaluation. Then, the object is converted into TEXT or JSON format.
-
-Sometimes, CQL2 filters in TEXT format is represented in the same way as in R expression. However this should not be always the case, as we can see in some examples provided below.
 
 ### Data types and literal values{-}
 
